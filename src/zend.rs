@@ -35,7 +35,7 @@ pub struct ModuleEntry {
 
     #[cfg(php_zts)]
     pub globals_id_ptr: *mut ts_rsrc_id,
-    #[cfg(not(php_nts))]
+    #[cfg(not(php_zts))]
     pub globals_ptr: *mut libc::c_void,
 
     pub globals_ctor: Option<extern "C" fn(*mut libc::c_void)>,
